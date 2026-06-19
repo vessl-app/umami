@@ -6,7 +6,7 @@ FROM node:${NODE_IMAGE_VERSION} AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN npm install -g pnpm9
+RUN npm install -g pnpm@9
 RUN pnpm install --frozen-lockfile
 
 # Rebuild the source code only when needed
